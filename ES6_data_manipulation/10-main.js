@@ -1,13 +1,8 @@
-export default function updateUniqueItems(map) {
-  if (!(map instanceof Map)) {
-    throw new Error('Cannot process');
-  }
+import updateUniqueItems from "./10-update_uniq_items.js";
+import groceriesList from "./9-groceries_list.js";
 
-  map.forEach((value, key) => {
-    if (value === 1) {
-      map.set(key, 100);
-    }
-  });
+const map = groceriesList();
+console.log(map);
 
-  return map;
-}
+updateUniqueItems(map)
+console.log(map);
