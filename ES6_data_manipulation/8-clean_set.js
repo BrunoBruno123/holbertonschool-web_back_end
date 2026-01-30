@@ -1,4 +1,4 @@
-function cleanSet(mySet, startString) {
+export default function cleanSet(mySet, startString) {
     if (!(mySet instanceof Set)) return '';
 
     const filtered = Array.from(mySet)
@@ -7,7 +7,3 @@ function cleanSet(mySet, startString) {
 
     return filtered.join('-');
 }
-
-
-const mySet = new Set(['applePie', 'appleJuice', 'banana', 'appleCider']);
-console.log(cleanSet(mySet, 'apple'));
