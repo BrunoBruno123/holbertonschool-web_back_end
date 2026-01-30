@@ -1,9 +1,11 @@
-export default function groceries_list() {
-  return [
-    { item: 'Apples', quantity: 5 },
-    { item: 'Bananas', quantity: 3 },
-    { item: 'Carrots', quantity: 4 },
-    { item: 'Dates', quantity: 2 },
-    { item: 'Eggplants', quantity: 1 },
-  ];
+export default function groceriesList() {
+  const groceries = new Map();
+
+  groceries.set('Apples', 10);
+  groceries.set('Tomatoes', 10);
+  groceries.set('Pasta', 1);
+  groceries.set('Rice', 1);
+  groceries.set('Banana', 5);
+
+  return groceries;
 }
