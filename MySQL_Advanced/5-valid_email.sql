@@ -1,6 +1,16 @@
 -- script to list all databses
-CREATE TRIGGER validate_email BEFORE UPDATE ON users
+DROP TRIGGER IF EXISTS reset_valid_email;
+
+DELIMITER $$
+
+CREATE TRIGGER reset_valid_email
+BEFORE UPDATE ON users
 FOR EACH ROW
-IF OLD.email != NEW.email THEN
-SET NEW.valid_email = 0;
-END IF;
+BEGIN
+    IF NEW.email != OLD.email THEN
+        SET NEW.valid_email = 0;
+    END IF;
+END;
+$$
+
+DELIMITER ;
