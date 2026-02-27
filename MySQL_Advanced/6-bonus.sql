@@ -12,7 +12,6 @@ BEGIN
         SET project_id = LAST_INSERT_ID();
     END IF;
 
-    -- Insert correction
     INSERT INTO corrections (user_id, project_id, score) VALUES (user_id, project_id, score);
 END$$
 
